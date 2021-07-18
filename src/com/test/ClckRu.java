@@ -20,27 +20,20 @@ public class ClckRu {
         int GlobalCount = 0;
         String url;
 
-//WBsXx
+//WDBNq
 //0-0 1-1 2-2 3-3 4-4 5-5 6-6 7-7 8-8 9-9 A-10
 //B-11 C-12 D-13 E-14 F-15 G-16 H-17 I-18 J-19 K-20 L-21 M-22 N-23 O-24 P-25 Q-26 R-27 S-28 T-29 U-30 V-31 W-32 X-33 Y-34 Z-35
 //a-36 b-37 c-38 d-39 e-40 f-41 g-42 h-43 i-44 j-45 k-46 l-47 m-48 n-49 o-50 p-51 q-52 r-53 s-54 t-55 u-56 v-57 w-58 x-59 y-60 z-61
 
-        String urlLast = "https://clck.ru/WBfBN";//отсюда начинает набор
-        char[] temp0 = urlLast.substring(16).toCharArray();
-        int one = temp0[0];
-        int two = temp0[1];
-        int three = temp0[2];
-        int four = temp0[3];
-        int five = temp0[4];
-
+//        String urlLast = "https://clck.ru/WBk00";WCcFS
 
         char[] symbols = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
         System.out.println("Работу начал...");
-        for (; one < 62; one++) {
-            for (; two < 62; two++) {
-                for (; three < 62; three++) {
-                    for (; four < 62; four++) {
-                        for (; five < 62; five++) {
+        for (int one = 32; one < 62; one++) {
+            for (int two = 13; two < 62; two++) {
+                for (int three = 11; three < 62; three++) {
+                    for (int four = 0; four < 62; four++) {
+                        for (int five = 0; five < 62; five++) {
 
                             GlobalCount++;
                             url = String.format("https://clck.ru/%c%c%c%c%c", symbols[one], symbols[two], symbols[three], symbols[four], symbols[five]);
@@ -66,7 +59,7 @@ public class ClckRu {
                                 }
 
                                 if (skryvat(titleFromSite)) {
-                                    double sec = (double) (System.currentTimeMillis() - start) / 1000;
+                                    double sec = (double) (System.currentTimeMillis() - start) / 1000;//1 секунда
                                     double sec2 = (double) (System.currentTimeMillis() - start) % 1000;
                                     double min = (double) ((System.currentTimeMillis() - start) / 1000) % 60;
 
@@ -101,9 +94,9 @@ public class ClckRu {
     }
 
     private static boolean skryvat(String s) {
-        return !s.equals("Google Документы ‒ бесплатно создавайте и редактируйте документы в Интернете.")
+        return !s.equals("Google Документы ‒ бесплатно создавайте и редактируйте документы в Интернете.") && !s.contains("PDisk")
                 && !s.equals("Facebook") && !s.equals("РСТ МЕТРОЛОГИЯ") && !s.contains("Ivermectin") && !s.contains("SEX")
-                && !s.equals("Google Таблицы ‒ бесплатно создавайте и редактируйте таблицы в Интернете.")
+                && !s.equals("Google Таблицы ‒ бесплатно создавайте и редактируйте таблицы в Интернете.") &&!s.equals("KAТАЛOГ МЕБЕЛИ")
                 && !s.contains("Яндекс.Карты") && !s.equals("Пройди тест на денежное мышление") && !s.contains("گ")
                 && !s.equals("Обратная связь - Группа медицинских компаний студия") && !s.contains("Опрос ИМ- Testograf.ru")
                 && !s.equals("МТС-Банк") && !s.equals("Index - MerchantNew") && !s.contains("Скажите, доктор…")
